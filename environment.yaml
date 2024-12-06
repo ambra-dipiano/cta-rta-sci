@@ -3,13 +3,13 @@ channels:
   - cta-observatory
 dependencies:
   - python=3.7
-  - ctools=1.7.4
+  # - ctools=1.7.4  -> not found for POWER9
   - astropy
-  - healpy
+  # - healpy -> will produce conflicts with tensorflow-gpu 2.4.3 + astropy 4.2 on for POWER9
   - pandas
-  - lxml
+  #- xml -> not found for POWER9
   - pyaml
   - scipy
-  - pyregion
+  #- pyregion -> not found for POWER9
   - seaborn
-  - gammapy
+#  - untangle  # required ONLY by the old version of the pipeline (folder "thesis")

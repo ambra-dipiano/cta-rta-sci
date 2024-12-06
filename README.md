@@ -29,7 +29,7 @@ To complete the environment be sure to download and install the correct IRFs (on
 
 ### **Configuration file**
 
-Under cfg you can find an example of configuration file. Description of each parameter is commented within. This file will serve as input when running the code. 
+Under cfg you can find an example of configuration file. Description of each parameter is commented within. This file will serve as input when running the code.
 
 ### **CALDB degradation**
 Be sure to have your calibration database installed under $CTOOLS/share. You can pass a single CALDB or a list, the degraded version will placed along side the nominal one. It will have the same suffix, replacing "prod" with "degr" (i.e., prod2 --> degr2).
@@ -58,7 +58,7 @@ To perform the analysis:
 ```bash
 python pipeline/pipeline_name.py -f cfg/config.yaml
 ```
-You are required to substitute pipeline_name.py with the chosen script (currently only one pipeline is available but there will be more in the future). 
+You are required to substitute pipeline_name.py with the chosen script (currently only one pipeline is available but there will be more in the future).
 
 All steps above may be run together with the following:
 
@@ -80,4 +80,18 @@ python simWobble.py -f cfg/config.yaml
 ```
 
 <HR>
-[**] subsceptible to changes 
+[**] subsceptible to changes
+
+
+### Branch power9
+
+This branch will enable the usage of this software on a machine with the POWER9 architecture.
+
+* Some dependencies were removed from the yaml requirements file due to missing anaconda packages for this architecture.
+* ctools - anaconda package not found - it must be installed from sources.
+* healpy - anaconda package found, but it downloads a lot of required packages that can create conflicts.
+* xml - anaconda package not found - but it's not used.
+* pyregion - anaconda package not found - install it with pip.
+* Healpy import in RTAUtils is removed.
+
+This branch will also pull the "leodev" branch commits.
